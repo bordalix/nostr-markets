@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>Nostr markets</title>
+    <meta name="title" content="Nostr markets" />
+    <meta name="description" content="Find nostr markets" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nostr-markets.pages.dev/" />
+    <meta property="og:title" content="Nostr markets" />
+    <meta property="og:description" content="Find nostr markets" />
+    <meta property="og:image" content="/img/nostr-markets_og.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nostr-markets.pages.dev/" />
+    <meta property="twitter:title" content="Nostr markets" />
+    <meta property="twitter:description" content="Find nostr markets" />
+    <meta property="twitter:image" content="/img/nostr-markets_twitter.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/market.png" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Lightning -->
+    <meta name="lightning" content="bordalix@getalby.com" />
+    <!-- PWA -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="apple-touch-icon" href="img/market.png" />
+  </head>
+  <body>
+    <main>
+      <div class="space-between">
+        <h1>Nostr markets</h1>
+        <p>
+          <a href="https://github.com/bordalix/nostr-markets"
+            ><img src="img/github.png"
+          /></a>
+          <a href="https://twitter.com/bordalix/status/1623293175128379393"
+            ><img src="img/twitter.png"
+          /></a>
+          <a
+            href="https://snort.social/e/note1xexzdxczz0gmxl6zm5zph54hn6m6uwkcln3vxjvwpyqw3xxfgf6sp8v69w"
+            ><img src="img/nostr.png"
+          /></a>
+        </p>
+      </div>
+      <p>Find Nostr markets</p>
+      <details>
+        <summary>Know more</summary>
+        <p>
+          This app will fetch all market creation events from a big list of
+          relays, present them and generate a javascript file for your usage.
+        </p>
+        <p>
+          If you want to use your own
+          <a
+            href="https://github.com/bordalix/nostr-markets/blob/master/js/relays.js"
+            >list of relays</a
+          >:
+        </p>
+        <ul>
+          <li>
+            Save this site or clone
+            <a href="https://github.com/bordalix/nostr-markets">repo</a>
+          </li>
+          <li>Edit <u>js/relays.js</u></li>
+          <li>Open <u>index.html</u> with a browser</li>
+        </ul>
+        <p>
+          Repo at
+          <a href="https://github.com/bordalix/nostr-markets">github</a>
+        </p>
+        <p>
+          Twitter
+          <a href="https://twitter.com/bordalix/">thread</a>
+          for discussion
+        </p>
+        <p>
+          Nostr
+          <a href="https://snort.social/">thread</a>
+          for discussion
+        </p>
+      </details>
+      <div class="box gray centered">
+        <p>
+          <button id="fetch-markets" onclick="fetchMarkets(); return false;">
+            Fetch markets
+          </button>
+        </p>
+      </div>
+      <div class="box">
+        <div class="space-between">
+          <p id="fetching-status"></p>
+          <p style="padding-top: 2px">
+            <progress
+              type="range"
+              id="fetching-progress"
+              name="fetching-progress"
+              min="0"
+              max="20"
+              value="0"
+              style="visibility: hidden" />
+          </p>
+        </div>
+        <div class="space-between">
+          <p id="file-download" style="margin-top: 0"></p>
+          <p id="markets-found" style="margin-top: 0"></p>
+        </div>
+      </div>
+      <div id="results"></div>
+    </main>
+
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="https://bundle.run/bech32@2.0.0"></script>
+    <script src="https://nostr-utils.pages.dev/js/jquery-3.6.2.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/relays.js"></script>
+    <script src="js/nostr-markets.js"></script>
+  </body>
+</html>
