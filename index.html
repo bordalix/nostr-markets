@@ -105,17 +105,25 @@
           </p>
         </div>
         <div class="space-between">
-          <p id="file-download" style="margin-top: 0"></p>
-          <p id="markets-found" style="margin-top: 0"></p>
+          <p style="margin-top: 0">
+            <button
+              id="file-download"
+              onclick="download(); return false;"
+              style="visibility: hidden">
+              Download JS file
+            </button>
+          </p>
+          <p id="events-found" style="margin-top: 0"></p>
         </div>
       </div>
+      <p id="markets-found" class="centered"></p>
       <div id="results"></div>
     </main>
 
     <script src="https://bundle.run/buffer@6.0.3"></script>
     <script src="https://bundle.run/bech32@2.0.0"></script>
     <script src="https://nostr-utils.pages.dev/js/jquery-3.6.2.min.js"></script>
-    <script src="js/utils.js"></script>
+    <script src="https://nostr-utils.pages.dev/js/nostr-utils.js"></script>
     <script src="js/relays.js"></script>
     <script src="js/nostr-markets.js"></script>
   </body>
